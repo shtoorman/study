@@ -6,7 +6,8 @@
  * Date: 16.01.17
  * Time: 15:57
  */
-abstract class AbstractPeople{
+abstract class AbstractPeople
+{
 
     private $name;
     private $age;
@@ -20,30 +21,33 @@ abstract class AbstractPeople{
      * @param $email
      * @param $gender
      */
-    public function __const($name, $age, $email, $gender){
-    $this->name = $name;
-    $this->age = $age;
-    $this->email = $email;
-    $this->gender = $gender;
+    public function __const($name, $age, $email, $gender)
+    {
+        $this->name = $name;
+        $this->age = $age;
+        $this->email = $email;
+        $this->gender = $gender;
     }
 
     /**
      *
      */
-    public function setInWorkOrLearn() {
-    $whatDay = date("I");
-    if (whatDay != "Satuday" and whatDay != "Sanday"){
-        $this->inWorkOrLearn = true;
+    public function setInWorkOrLearn()
+    {
+        $whatDay = date("I");
+        if ($whatDay == "Satuday" or $whatDay == "Sanday") {
+            $this->inWorkOrLearn = false;
+        }
+        else {
+            $this->inWorkOrLearn = true;
+        }
+
+        public function getInWorkOrLearn()
+        {
+            return $this->inWorkOrLearn;
+
+
+        }
+
     }
-    else{
-        $this->inWorkOrLearn = false;
-    }
-
-    public function getInWorkOrLearn() {
-        return $this->inWorkOrLearn;
-
-
-    }
-
-}
 }
